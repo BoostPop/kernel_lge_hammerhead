@@ -435,6 +435,8 @@ obj-$(CONFIG_CPU_FREQ_MSM) += cpufreq.o
 obj-$(CONFIG_WALL_CLK) += wallclk.o
 obj-$(CONFIG_WALL_CLK_SYSFS) += wallclk_sysfs.o
 
+obj-$(CONFIG_FORCE_FAST_CHARGE) += fastchg.o
+
 ifdef CONFIG_MACH_MSM8974_HAMMERHEAD_STRICT_ALIASING
 CFLAGS_bam_dmux.o := -fno-strict-aliasing
 CFLAGS_ipc_router_smd_xprt.o := -fno-strict-aliasing
@@ -443,4 +445,3 @@ CFLAGS_ipc_socket.o := -fno-strict-aliasing
 CFLAGS_msm_ipc_router_security.o := -fno-strict-aliasing
 CFLAGS_rpm_log.o := -fno-strict-aliasing
 endif
-
