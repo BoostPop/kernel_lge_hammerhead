@@ -335,6 +335,9 @@ CC		= $(CROSS_COMPILE)gcc
 CC		+= \
 	$(GRAPHITE_KERNEL_FLAGS) \
 	-lto
+ifeq ($(strip $(O3_OPTIMIZATIONS)),true)
+CC		+= -O3
+endif
 CPP		= $(CC) -E
 AR		= $(CROSS_COMPILE)ar
 NM		= $(CROSS_COMPILE)nm
