@@ -332,12 +332,13 @@ AS		= $(CROSS_COMPILE)as
 LD		= $(CROSS_COMPILE)ld
 LD		+= $(GRAPHITE_KERNEL_FLAGS)
 CC		= $(CROSS_COMPILE)gcc
-CC		+= \
-	$(GRAPHITE_KERNEL_FLAGS) \
-	-lto
 ifeq ($(strip $(O3_OPTIMIZATIONS)),true)
 CC		+= -O3
 endif
+CC		+= \
+	$(kernel_arch_variant_cflags) \
+	$(GRAPHITE_KERNEL_FLAGS) \
+	-lto
 CPP		= $(CC) -E
 AR		= $(CROSS_COMPILE)ar
 NM		= $(CROSS_COMPILE)nm
